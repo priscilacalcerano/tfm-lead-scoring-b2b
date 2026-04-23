@@ -1,10 +1,10 @@
-# B2B Lead Scoring — TFM Nuclio Data Science & AI
+# B2B Lead Scoring - TFM Nuclio Data Science & AI
 
 Predictive lead scoring system for B2B outbound prospecting, built on real campaign data from multiple clients across Spain and LATAM.
 
 **The problem:** SDR teams contact hundreds of leads per week without a reliable way to prioritize. Most effort goes to leads that will never reply.
 
-**The solution:** A LightGBM model that scores each contact (0–1) based on seniority, department, company profile, and engagement history — trained on 10,946 contacts with verified reply outcomes.
+**The solution:** A LightGBM model that scores each contact (0-1) based on seniority, department, company profile, and engagement history, trained on 10,946 contacts with verified reply outcomes.
 
 ---
 
@@ -17,25 +17,25 @@ Predictive lead scoring system for B2B outbound prospecting, built on real campa
 | Precision @ top 100 | 38% |
 | Clusters identified | 7 |
 
-**Business impact:** Concentrating outreach on the top 10% of scored leads produces 3.6x more replies than random contact — equivalent to ~25 additional sales conversations per week at zero incremental cost.
+**Business impact:** Concentrating outreach on the top 10% of scored leads produces 3.6x more replies than random contact, equivalent to ~25 additional sales conversations per week at zero incremental cost.
 
 ---
 
 ## Structure
 
 ```
-notebooks/          — end-to-end analysis pipeline
-  01_data_loading.ipynb       — data ingestion and validation
-  02_eda.ipynb                — exploratory analysis and reply rate by segment
-  03_feature_engineering.ipynb — feature construction and NLP processing
-  04_models.ipynb             — model competition, Optuna tuning, SHAP analysis
-  05_mlops.ipynb              — packaging, versioning, monitoring setup
+notebooks/         : end-to-end analysis pipeline
+  01_data_loading.ipynb      : data ingestion and validation
+  02_eda.ipynb               : exploratory analysis and reply rate by segment
+  03_feature_engineering.ipynb: feature construction and NLP processing
+  04_models.ipynb            : model competition, Optuna tuning, SHAP analysis
+  05_mlops.ipynb             : packaging, versioning, monitoring setup
 
-app/                — production-ready scoring API + dashboard
-  api.py            — FastAPI endpoint for real-time scoring
-  streamlit_app.py  — interactive dashboard for SDR teams
-  models/           — trained model artifacts (.pkl)
-  Dockerfile        — containerized deployment
+app/               : production-ready scoring API + dashboard
+  api.py           : FastAPI endpoint for real-time scoring
+  streamlit_app.py : interactive dashboard for SDR teams
+  models/          : trained model artifacts (.pkl)
+  Dockerfile       : containerized deployment
   docker-compose.yml
 ```
 
